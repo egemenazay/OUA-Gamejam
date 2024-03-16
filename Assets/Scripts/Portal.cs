@@ -20,7 +20,10 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // other player m?
+        if (other.gameObject.CompareTag("Player"))
+        {
+            
+        }
     }
 
     // Teleport() plyaer.transform.position = destination
