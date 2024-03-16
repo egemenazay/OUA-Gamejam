@@ -6,8 +6,8 @@ public class Player : MonoBehaviour
 {
 
     public int hp = 100;
-    // speed
-    // attack
+    public float speed;
+    public int attack;
     // attack speed
     // enemy
 

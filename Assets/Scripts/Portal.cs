@@ -5,10 +5,11 @@ using UnityEngine;
 public class Portal : MonoBehaviour
 {
     // Start is called before the first frame update
-    // destination
+    // destination: Vector3
+    // player
     void Start()
     {
-        
+        // player tagiyle bul
     }
 
     // Update is called once per frame
@@ -22,5 +23,5 @@ public class Portal : MonoBehaviour
         // other player m?
     }
 
-    // Teleport()
+    // Teleport() plyaer.transform.position = destination
 }
