@@ -86,6 +86,7 @@ namespace StarterAssets
         private float _rotationVelocity;
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
+        private bool _canMove = true;
 
         // timeout deltatime
         private float _jumpTimeoutDelta;
@@ -245,6 +246,10 @@ namespace StarterAssets
                 _speed = targetSpeed;
             }
 
+            if (!_canMove) {
+                _speed = 0.0f;
+            }
+
             _animationBlend = Mathf.Lerp(_animationBlend, targetSpeed, Time.deltaTime * SpeedChangeRate);
             if (_animationBlend < 0.01f) _animationBlend = 0f;
 
@@ -353,6 +358,10 @@ namespace StarterAssets
             if (lfAngle < -360f) lfAngle += 360f;
             if (lfAngle > 360f) lfAngle -= 360f;
             return Mathf.Clamp(lfAngle, lfMin, lfMax);
+        }
+
+        public void SetCanMove(bool canMove) {
+            _canMove = canMove;
         }
 
         private void OnDrawGizmosSelected()
