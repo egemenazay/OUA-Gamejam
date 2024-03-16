@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    
-    // hp
+
+    public int hp = 100;
     // speed
     // attack
     // attack speed
     // enemy
 
     // attack range
+    public bool isAlive;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,5 +30,9 @@ public class Player : MonoBehaviour
     //Attack() Raycast tag
     //Die()
     //PickUp()
-    // TakeDamage(int damage)
+    public void TakeDamage(int damage)
+    {
+        hp -= damage;
+        Debug.Log(hp);
+    }
 }
