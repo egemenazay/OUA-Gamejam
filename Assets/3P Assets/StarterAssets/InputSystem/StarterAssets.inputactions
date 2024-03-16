@@ -47,7 +47,7 @@
                     "id": "b8b1a8e9-9221-4a61-a36e-c7d9ac2fe591",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press",
+                    "interactions": "",
                     "initialStateCheck": false
                 },
                 {
@@ -56,7 +56,7 @@
                     "id": "ee9b78ed-23b6-4fcb-bbd9-c47230a730aa",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press",
+                    "interactions": "",
                     "initialStateCheck": false
                 }
             ],
@@ -241,7 +241,7 @@
                     "name": "",
                     "id": "637b41e4-2596-4600-8d25-c0ff3e2ce2a2",
                     "path": "<Keyboard>/r",
-                    "interactions": "Press",
+                    "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
                     "action": "DrawWeapon",
@@ -252,7 +252,7 @@
                     "name": "",
                     "id": "50c5cde8-7f5a-46bd-b597-76e2faa432ff",
                     "path": "<Mouse>/leftButton",
-                    "interactions": "Tap",
+                    "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
                     "action": "Attack",
