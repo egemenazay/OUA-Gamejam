@@ -1,10 +1,6 @@
 using StarterAssets;
 using UnityEngine;
 
-public class PlayerAnimationLayers {
-    public const int COMBAT = 1;
-}
-
 public class PlayerAnimatorParameters {
     public const string DRAW_WEAPON = "DrawWeapon";
     public const string SHEATH_WEAPON = "SheathWeapon";
@@ -48,7 +44,6 @@ public class PlayerCombat : MonoBehaviour {
         WeaponDrawed = !WeaponDrawed;
 
         if (WeaponDrawed) {
-            _animator.SetLayerWeight(PlayerAnimationLayers.COMBAT, 1);
             _animator.SetTrigger(PlayerAnimatorParameters.DRAW_WEAPON);
         }
         else {
@@ -73,7 +68,6 @@ public class PlayerCombat : MonoBehaviour {
     }
 
     public void OnSheathWeaponEnd() {
-        _animator.SetLayerWeight(PlayerAnimationLayers.COMBAT, 0);
         _canDrawWeapon = true;
     }
 
