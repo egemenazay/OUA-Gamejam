@@ -74,7 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6239246663249322999}
   m_Layer: 0
-  m_Name: NestedParentArmature_Unpack
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
