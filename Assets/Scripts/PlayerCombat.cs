@@ -25,12 +25,10 @@ public class PlayerCombat : MonoBehaviour {
 
     bool _canDrawWeapon = true;
 
-    private ThirdPersonController _thirdPersonController;
 
     void Start() {
         _input = GetComponent<StarterAssetsInputs>();
         _animator = GetComponent<Animator>();
-        _thirdPersonController = GetComponent<ThirdPersonController>();
     }
 
     void Update() {
@@ -44,7 +42,7 @@ public class PlayerCombat : MonoBehaviour {
     }
 
     void DrawWeapon() {
-        SetCanDrawWeapon(false);
+        _canDrawWeapon = false;
         _input.drawWeapon = false;
 
         WeaponDrawed = !WeaponDrawed;
@@ -58,11 +56,6 @@ public class PlayerCombat : MonoBehaviour {
         }
     }
 
-    private void SetCanDrawWeapon(bool canDrawWeapon) {
-        _canDrawWeapon = canDrawWeapon;
-        _thirdPersonController.SetCanMove(canDrawWeapon);
-    }
-
     #region Animation Events
 
     public void OnGrabWeapon() {
@@ -71,7 +64,7 @@ public class PlayerCombat : MonoBehaviour {
     }
 
     public void OnDrawWeaponEnd() {
-        SetCanDrawWeapon(true);
+        _canDrawWeapon = true;
     }
 
     public void OnSheatWeapon() {
@@ -81,7 +74,7 @@ public class PlayerCombat : MonoBehaviour {
 
     public void OnSheathWeaponEnd() {
         _animator.SetLayerWeight(PlayerAnimationLayers.COMBAT, 0);
-        SetCanDrawWeapon(true);
+        _canDrawWeapon = true;
     }
 
     #endregion
