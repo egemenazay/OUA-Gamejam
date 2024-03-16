@@ -41,18 +41,22 @@ public class PlayerCombat : MonoBehaviour {
 
         if (Attacking) {
             _timePassed += Time.deltaTime;
-            _clipLength = _animator.GetCurrentAnimatorClipInfo(1)[0].clip.length;
-            _clipSpeed = _animator.GetCurrentAnimatorStateInfo(1).speed;
+            AnimatorClipInfo[] clipInfo = _animator.GetCurrentAnimatorClipInfo(1);
 
-            //if (_timePassed >= _clipLength / _clipSpeed && _input.attack) {
-            //    Attack();
-            //}
+            if (clipInfo?.Length > 0) {
+                _clipLength = clipInfo[0].clip.length;
+                _clipSpeed = _animator.GetCurrentAnimatorStateInfo(1).speed;
 
-            if (_timePassed >= _clipLength / _clipSpeed) {
-                _animator.applyRootMotion = false;
-                Attacking = false;
-                _animator.SetTrigger(PlayerAnimatorParameters.MOVE);
-                _thirdPersonController.canMove = true;
+                //if (_timePassed >= _clipLength / _clipSpeed && _input.attack) {
+                //    Attack();
+                //}
+
+                if (_timePassed >= _clipLength / _clipSpeed) {
+                    _animator.applyRootMotion = false;
+                    Attacking = false;
+                    _animator.SetTrigger(PlayerAnimatorParameters.MOVE);
+                    _thirdPersonController.canMove = true;
+                }
             }
         }
 
