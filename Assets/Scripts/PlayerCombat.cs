@@ -8,7 +8,7 @@ public class PlayerAnimatorParameters {
 
 public class PlayerCombat : MonoBehaviour {
 
-    public bool CanAttack => WeaponDrawed && _canDrawWeapon && !Attacking;
+    public bool CanAttack => WeaponDrawed && !Attacking;
 
     public bool WeaponDrawed;
     public bool Attacking;
@@ -19,8 +19,6 @@ public class PlayerCombat : MonoBehaviour {
     StarterAssetsInputs _input;
     Animator _animator;
 
-    bool _canDrawWeapon = true;
-
 
     void Start() {
         _input = GetComponent<StarterAssetsInputs>();
@@ -28,17 +26,12 @@ public class PlayerCombat : MonoBehaviour {
     }
 
     void Update() {
-        if (!Attacking && _canDrawWeapon && _input.drawWeapon) {
+        if (!Attacking && _input.drawWeapon) {
             DrawWeapon();
-        }
-
-        if (!CanAttack) {
-            return;
         }
     }
 
     void DrawWeapon() {
-        _canDrawWeapon = false;
         _input.drawWeapon = false;
 
         WeaponDrawed = !WeaponDrawed;
@@ -58,17 +51,9 @@ public class PlayerCombat : MonoBehaviour {
         SheatHolder.SetActive(false);
     }
 
-    public void OnDrawWeaponEnd() {
-        _canDrawWeapon = true;
-    }
-
     public void OnSheatWeapon() {
         WeaponHolder.SetActive(false);
         SheatHolder.SetActive(true);
-    }
-
-    public void OnSheathWeaponEnd() {
-        _canDrawWeapon = true;
     }
 
     #endregion
