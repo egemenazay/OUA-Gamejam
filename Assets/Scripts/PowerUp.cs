@@ -40,6 +40,7 @@ public class PowerUp : MonoBehaviour
 
             player.ResetHp();
             gameObject.SetActive(false);
+            player.powerUpsCollected++;
         }
     }
 }
