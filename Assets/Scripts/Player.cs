@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
 
     public bool isAlive;
 
+    public int powerUpsCollected = 0;
+
     void Start()
     {
         isAlive = true;

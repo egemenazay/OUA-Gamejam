@@ -362,9 +362,9 @@ namespace StarterAssets {
             }
         }
 
-        public void IncreaseSpeed(float moveSpeed, float sprintSpeed) {
-            MoveSpeed += moveSpeed;
-            SprintSpeed += sprintSpeed;
+        public void SetSpeed(float moveSpeed, float sprintSpeed) {
+            MoveSpeed = moveSpeed;
+            SprintSpeed = sprintSpeed;
         }
     }
 }

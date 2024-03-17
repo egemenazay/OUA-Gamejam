@@ -8,7 +8,7 @@ public class PowerUp : MonoBehaviour
     [SerializeField] public GameObject wall1;
     [SerializeField] public GameObject wall2;
     private healthBar maxHP;
-    private int speedamount = 2;
+    private float speedamount = 4.5f;
     private int hpamount = 100;
     private int attackamount = 20;
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class PowerUp : MonoBehaviour
             if (id == 0)
             {
                 ThirdPersonController thirdPersonController = player.GetComponent<ThirdPersonController>();
-                thirdPersonController.IncreaseSpeed(speedamount, speedamount * 1.5f);
+                thirdPersonController.SetSpeed(speedamount, speedamount * 2);
             }
             else if (id == 1)
             {
@@ -43,6 +43,7 @@ public class PowerUp : MonoBehaviour
 
             player.ResetHp();
             gameObject.SetActive(false);
+            player.powerUpsCollected++;
         }
     }
 }
