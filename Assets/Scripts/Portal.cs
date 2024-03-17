@@ -1,30 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Portal : MonoBehaviour
-{
-    // Start is called before the first frame update
-    // destination: Vector3
-    // player
-    void Start()
-    {
-        // player tagiyle bul
+public class Portal : MonoBehaviour {
+
+    public Transform Destination;
+
+    GameObject _player;
+
+    void Start() {
+        _player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Teleport() {
+        CharacterController characterController = _player.GetComponent<CharacterController>();
+        characterController.enabled = false;
+        _player.transform.position = new Vector3(Destination.position.x, Destination.position.y, Destination.position.z);
+        characterController.enabled = true;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.CompareTag("Player")) {
+            Teleport();
         }
     }
 
-    // Teleport() plyaer.transform.position = destination
 }
