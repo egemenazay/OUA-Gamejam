@@ -13709,8 +13709,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Y\xFCr\xFCmek i\xE7in WASD \nZ\u0131plamak i\xE7in SPACE \nTu\u015Flar\u0131n\u0131
-    kullan"
+  m_text: "Y\xFCr\xFCmek i\xE7in WASD \nKo\u015Fmak i\xE7in Shift\nZ\u0131plamak
+    i\xE7in SPACE \nTu\u015Flar\u0131n\u0131 kullan"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6e2a9c5f38c428d4981ac02731c5557d, type: 2}
   m_sharedMaterial: {fileID: 4327457008600807752, guid: 6e2a9c5f38c428d4981ac02731c5557d, type: 2}
