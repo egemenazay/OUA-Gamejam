@@ -1,8 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Wizard : MonoBehaviour
+public class Wizard : MonoBehaviour, IDamageable
 {
     // hp
     public int healthPoints;
@@ -30,6 +29,7 @@ public class Wizard : MonoBehaviour
     public static int attackTwo = Animator.StringToHash("attackTwo");
     public static int die = Animator.StringToHash("die");
     public static int inSpellRange = Animator.StringToHash("inSpellRange");
+    public GameObject FloatingTextPrefab;
 
 
     void Start()
@@ -111,11 +111,17 @@ public class Wizard : MonoBehaviour
     
     public void TakeDamage(int damage)
     {
+        if (!isAlive) {
+            return;
+        }
         healthPoints -= damage;
-        if (healthPoints <= 0)
-        {
+        if (healthPoints <= 0) {
             Die();
         }
+
+        GameObject floatingTextObj = Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity, transform);
+        FloatingText floatingText = floatingTextObj.GetComponent<FloatingText>();
+        floatingText.SetText(damage.ToString());
     }
 
     private void Die()

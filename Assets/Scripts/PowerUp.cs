@@ -53,42 +53,46 @@ public class PowerUp : MonoBehaviour
             }
             player.powerUpsCollected++;
 
-            if (ShowFloatingText()) {
-                return;
-            }
-
+            ShowFloatingText1();
             DeActivate();
         }
     }
 
-    bool ShowFloatingText() {
-        string text = GetFloatingText();
-        if (string.IsNullOrWhiteSpace(text)) {
-            return false;
-        }
-        GameObject floatingTextObj = Instantiate(FloatingTextPrefab, FloatingTextSpawnPos.position, Quaternion.identity, FloatingTextSpawnPos.parent);
-        floatingTextObj.transform.position = FloatingTextSpawnPos.position;
-        FloatingText floatingText = floatingTextObj.GetComponent<FloatingText>();
-        floatingText.Offset = Vector3.zero;
-        floatingText.RandomizeIntensity = Vector3.zero;
-        floatingText._textMeshProUGUI.fontSize /= 2;
-        floatingText.SetText(text);
-        floatingText.SetColor(Color.white);
-        Invoke(nameof(DeActivate), floatingText.DestroyTime);
-        return true;
-    }
-
-    void DeActivate() {
-        gameObject.SetActive(false);
-    }
-
-    string GetFloatingText() {
-        return id switch {
+    void ShowFloatingText1() {
+        string text = id switch {
             0 => "+Speed up",
             1 => "+" + hpamount + " health",
             2 => "+" + attackamount + " damage",
             _ => string.Empty,
         };
+
+        GameObject floatingTextObj = Instantiate(FloatingTextPrefab, FloatingTextSpawnPos.position, Quaternion.identity, FloatingTextSpawnPos.parent);
+        floatingTextObj.transform.position = FloatingTextSpawnPos.position;
+        FloatingText floatingText = floatingTextObj.GetComponent<FloatingText>();
+        floatingText.Offset = Vector3.zero;
+        floatingText.RandomizeIntensity = Vector3.zero;
+        floatingText.DestroyTime = 3;
+        floatingText._textMeshProUGUI.fontSize /= 2;
+        floatingText.SetText(text);
+        floatingText.SetColor(Color.white);
+        Invoke(nameof(ShowFloatingText2), floatingText.DestroyTime);
+    }
+
+    void ShowFloatingText2() {
+        string text = "A new corridor has been opened at the entrance of the dungeon.";
+        GameObject floatingTextObj = Instantiate(FloatingTextPrefab, FloatingTextSpawnPos.position, Quaternion.identity, FloatingTextSpawnPos.parent);
+        floatingTextObj.transform.position = FloatingTextSpawnPos.position;
+        FloatingText floatingText = floatingTextObj.GetComponent<FloatingText>();
+        floatingText.Offset = Vector3.zero;
+        floatingText.RandomizeIntensity = Vector3.zero;
+        floatingText.DestroyTime = 5;
+        floatingText._textMeshProUGUI.fontSize /= 2;
+        floatingText.SetText(text);
+        floatingText.SetColor(Color.white);
+    }
+
+    void DeActivate() {
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
     }
 }
 

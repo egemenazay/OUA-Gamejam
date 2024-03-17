@@ -25838,6 +25838,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4924264494717769062, guid: 3277f773a2c3a9c4ba9f27eeb02db160, type: 3}
+      propertyPath: FloatingTextPrefab
+      value: 
+      objectReference: {fileID: 4703460610645885384, guid: a903790c41f4b294baec3489feb547cf, type: 3}
     - target: {fileID: 3985452484900589676, guid: 3277f773a2c3a9c4ba9f27eeb02db160, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4
