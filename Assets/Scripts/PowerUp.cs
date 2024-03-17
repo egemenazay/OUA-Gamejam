@@ -22,6 +22,7 @@ public class PowerUp : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            player.ResetHp();
             if (id == 0)
             {
                 ThirdPersonController thirdPersonController = player.GetComponent<ThirdPersonController>();
@@ -40,8 +41,6 @@ public class PowerUp : MonoBehaviour
                 weapon.MaxDamage += attackamount;
                 wall1.SetActive(false);
             }
-
-            player.ResetHp();
             gameObject.SetActive(false);
             player.powerUpsCollected++;
         }
