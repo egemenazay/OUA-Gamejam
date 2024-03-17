@@ -18,6 +18,14 @@ public class Weapon : MonoBehaviour {
             }
             playerCombat.HitDamage = false;
         }
+        if (gameObject.CompareTag("Player") && other.gameObject.CompareTag("Wizard")) {
+            damageable = other.gameObject.GetComponent<Wizard>();
+            PlayerCombat playerCombat = gameObject.GetComponentInParent<PlayerCombat>();
+            if (!playerCombat.HitDamage) {
+                return;
+            }
+            playerCombat.HitDamage = false;
+        }
         if (gameObject.CompareTag("Enemy") && other.gameObject.CompareTag("Player")) {
             damageable = (IDamageable)other.gameObject.GetComponent<Player>();
         }
