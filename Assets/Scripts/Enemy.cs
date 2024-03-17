@@ -25,6 +25,8 @@ public class Enemy : MonoBehaviour, IDamageable
     public static int hasTarget = Animator.StringToHash("hasTarget");
     public static int inRange = Animator.StringToHash("inRange");
     public static int die = Animator.StringToHash("die");
+    public GameObject FloatingTextPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -116,6 +118,10 @@ public class Enemy : MonoBehaviour, IDamageable
         {
             Die();
         }
+
+        GameObject floatingTextObj = Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity, transform);
+        FloatingText floatingText = floatingTextObj.GetComponent<FloatingText>();
+        floatingText.SetText(damage.ToString());
     }
     
     private void Die()

@@ -5952,7 +5952,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1047696202644056072, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
       propertyPath: DamageCurve.m_Mode
-      value: 0
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047696202644056072, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
+      propertyPath: DamageCurve.m_ConstantMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047696202644056072, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
+      propertyPath: DamageCurve.m_ConstantMin
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2670141829363538538, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
       propertyPath: isAlive

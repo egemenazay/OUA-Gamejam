@@ -86,6 +86,7 @@ MonoBehaviour:
   enemyAnimator: {fileID: 1609732055977716663}
   targetVector: {x: 0, y: 0, z: 0}
   targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  FloatingTextPrefab: {fileID: 4703460610645885384, guid: a903790c41f4b294baec3489feb547cf, type: 3}
 --- !u!143 &8438819450386848732
 CharacterController:
   m_ObjectHideFlags: 0

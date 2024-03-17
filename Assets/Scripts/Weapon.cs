@@ -1,8 +1,12 @@
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class Weapon : MonoBehaviour {
 
-    public int Damage = 5;
+    public int MinDamage = 5;
+    public int MaxDamage = 10;
+
+    private int Damage => Mathf.CeilToInt(Random.Range(MinDamage, MaxDamage));
 
     private void OnTriggerEnter(Collider other) {
         IDamageable damageable = null;
