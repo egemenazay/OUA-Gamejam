@@ -31,4 +31,8 @@ public class FloatingText : MonoBehaviour {
         _textMeshProUGUI.text = text;
     }
 
+    public void SetColor(Color color) {
+        _textMeshProUGUI.color = color;
+    }
+
 }
