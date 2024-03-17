@@ -2,6 +2,7 @@ using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class Interactor : MonoBehaviour {
 
     public Transform InteractionPoint;
@@ -9,7 +10,7 @@ public class Interactor : MonoBehaviour {
     public LayerMask InteractableMask;
     public InteractionPromptUI InteractionPromptUI;
 
-    [DebugState]
+    //[DebugState]
     int _numFound = 0;
     readonly Collider[] _colliders = new Collider[3];
     IInteractable _interactable;
