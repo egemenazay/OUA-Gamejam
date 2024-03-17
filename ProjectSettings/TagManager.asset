@@ -45,6 +45,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: buttons
-    uniqueID: 3132314173
+  - name: button
+    uniqueID: 798180469
+    locked: 0
+  - name: frame
+    uniqueID: 1009454031
     locked: 0
