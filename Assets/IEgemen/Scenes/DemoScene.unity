@@ -5999,15 +5999,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4282401127381629867, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.064989
+      value: -3.0649893
       objectReference: {fileID: 0}
     - target: {fileID: 4282401127381629867, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9210001
+      value: -0.921
       objectReference: {fileID: 0}
     - target: {fileID: 4282401127381629867, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.9197491
+      value: 0.91974914
       objectReference: {fileID: 0}
     - target: {fileID: 4282401127381629867, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6019,15 +6019,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5272089879175095730, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.064989
+      value: -3.0649893
       objectReference: {fileID: 0}
     - target: {fileID: 5272089879175095730, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9210001
+      value: -0.921
       objectReference: {fileID: 0}
     - target: {fileID: 5272089879175095730, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.9197491
+      value: 0.91974914
       objectReference: {fileID: 0}
     - target: {fileID: 6239246663249322999, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22555,8 +22555,8 @@ MonoBehaviour:
   Destination: {fileID: 1740881160}
   _interactionPrompt: Enter Dungeon (E)
   FromDungeon: 0
-  _npcs1: {fileID: 1814526484}
-  _priest: {fileID: 1106095885}
+  _npcs1: {fileID: 0}
+  _priest: {fileID: 0}
   FloatingTextPrefab: {fileID: 0}
   MissingConditionPrompt: You must collect all powerups before turn back to the village!
 --- !u!4 &1795624267 stripped
