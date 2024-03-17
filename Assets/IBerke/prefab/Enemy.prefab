@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 10
-  moveSpeed: 0
+  moveSpeed: 4
   attackPoints: 1
   attackSpeed: 2
   player: {fileID: 0}

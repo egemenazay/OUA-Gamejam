@@ -11,7 +11,6 @@ public class Wizard : MonoBehaviour
     // attackOneDamage
     // attackTwoDamage
     // attack speed
-    public float attackSpeed;
     // player
     public Player player;
     // attack range
@@ -24,6 +23,14 @@ public class Wizard : MonoBehaviour
     public bool isAlive;
     public CharacterController characterController;
     public float distanceToPlayer;
+
+    public Animator wizardAnimator;
+    public static int attackOne = Animator.StringToHash("attackOne");
+    public static int attackThree = Animator.StringToHash("attackThree");
+    public static int attackTwo = Animator.StringToHash("attackTwo");
+    public static int die = Animator.StringToHash("die");
+    public static int inSpellRange = Animator.StringToHash("inSpellRange");
+
 
     void Start()
     {
@@ -38,29 +45,35 @@ public class Wizard : MonoBehaviour
     {
         distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
         inHitRange = distanceToPlayer < 20;
+        wizardAnimator.SetBool(inSpellRange, inHitRange);
+        Move();
     }
 
     private IEnumerator SpellOneRoutine()
     {
-        yield return new WaitForSeconds(3);
-        // animasyon geçişi
+        wizardAnimator.SetTrigger(attackOne);
+        yield return new WaitForSeconds(1);
         var projectile = Instantiate(projectileSkillPrefab, transform.position, Quaternion.identity);
-        projectile.GetComponent<Projectile>().direction = transform.forward;
+        yield return new WaitForSeconds(2);
     }
 
     private IEnumerator SpellTwoRoutine()
     {
-        yield return new WaitForSeconds(5);
-        // animasyon geçişi
+        wizardAnimator.SetTrigger(attackTwo);
+        yield return new WaitForSeconds(1);
         var areaOfEffect = Instantiate(areaSkillPrefab, player.transform.position, Quaternion.identity);
+        Destroy(areaOfEffect, 5);
+        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
     }
 
     private IEnumerator SpellThreeRoutine()
     {
+        wizardAnimator.SetTrigger(attackThree);
+        yield return new WaitForSeconds(2);
+        var skeletonOne = Instantiate(skeletonPrefab, new Vector3(transform.position.x + 10, transform.position.y, transform.position.z), Quaternion.identity);
+        var skeletonTwo = Instantiate(skeletonPrefab, new Vector3(transform.position.x - 10, transform.position.y, transform.position.z), Quaternion.identity);
         yield return new WaitForSeconds(4);
-        // animasyon geçişi
-        var skeletonOne = Instantiate(skeletonPrefab, new Vector3(transform.position.x + 5, transform.position.y, transform.position.z), Quaternion.identity);
-        var skeletonTwo = Instantiate(skeletonPrefab, new Vector3(transform.position.x - 5, transform.position.y, transform.position.z), Quaternion.identity);
     }
 
     private IEnumerator AttackRoutine()
@@ -108,7 +121,7 @@ public class Wizard : MonoBehaviour
     private void Die()
     {
         isAlive = false;
-        // olum animasyonu
+        wizardAnimator.SetTrigger(die);
         Destroy(gameObject, 3);
     }
 }
