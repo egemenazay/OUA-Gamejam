@@ -4,14 +4,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    // destination
-    // player
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    public Vector3 direction;
+    public float moveSpeed;
     // Update is called once per frame
     void Update()
     {
@@ -20,8 +14,15 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.CompareTag("Player"))
+        {
+            
+        }
     }
 
+    private void Move()
+    {
+        transform.Translate(direction * Time.deltaTime);
+    }
     // Move()
 }
