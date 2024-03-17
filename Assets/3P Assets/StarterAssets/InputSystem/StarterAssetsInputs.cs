@@ -14,6 +14,7 @@ namespace StarterAssets {
         [Header("Combat Input Values")]
         public bool drawWeapon;
         public bool attack;
+        public bool interact;
 
         [Header("Movement Settings")]
         public bool analogMovement;
@@ -48,6 +49,9 @@ namespace StarterAssets {
         public void OnAttack(InputValue value) {
             AttackInput(value.isPressed);
         }
+        public void OnInteract(InputValue value) {
+            InteractInput(value.isPressed);
+        }
 #endif
 
 
@@ -73,6 +77,10 @@ namespace StarterAssets {
 
         public void AttackInput(bool newAttackState) {
             attack = newAttackState;
+        }
+
+        public void InteractInput(bool newInteractState) {
+            interact = newInteractState;
         }
 
         private void OnApplicationFocus(bool hasFocus) {

@@ -1,3 +1,4 @@
+using StarterAssets;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,10 +11,16 @@ public class Interactor : MonoBehaviour {
     public LayerMask InteractableMask;
     public InteractionPromptUI InteractionPromptUI;
 
+    StarterAssetsInputs _input;
+
     //[DebugState]
     int _numFound = 0;
     readonly Collider[] _colliders = new Collider[3];
     IInteractable _interactable;
+
+    private void Start() {
+        _input = GetComponent<StarterAssetsInputs>();
+    }
 
     void Update() {
         _numFound = Physics.OverlapSphereNonAlloc(
@@ -29,7 +36,8 @@ public class Interactor : MonoBehaviour {
                     InteractionPromptUI.SetUp(_interactable.InteractionPrompt);
                 }
 
-                if (Keyboard.current.eKey.wasPressedThisFrame) {
+                if (_input.interact) {
+                    _input.interact = false;
                     _interactable.Interact(this);
                 }
             }
