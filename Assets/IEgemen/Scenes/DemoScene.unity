@@ -17111,6 +17111,8 @@ MonoBehaviour:
   FromDungeon: 1
   _npcs1: {fileID: 1814526484}
   _priest: {fileID: 1106095885}
+  FloatingTextPrefab: {fileID: 0}
+  MissingConditionPrompt: You must collect all powerups before turn back to the village!
 --- !u!1001 &1415267739
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22553,8 +22555,10 @@ MonoBehaviour:
   Destination: {fileID: 1740881160}
   _interactionPrompt: Enter Dungeon (E)
   FromDungeon: 0
-  _npcs1: {fileID: 0}
-  _priest: {fileID: 0}
+  _npcs1: {fileID: 1814526484}
+  _priest: {fileID: 1106095885}
+  FloatingTextPrefab: {fileID: 0}
+  MissingConditionPrompt: You must collect all powerups before turn back to the village!
 --- !u!4 &1795624267 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5229622506550474334, guid: 535661ee8a3dd6048bb8dc9109162882, type: 3}
