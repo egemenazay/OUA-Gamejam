@@ -1,50 +1,48 @@
-﻿using System;
+﻿using StarterAssets;
 using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
-    public Player player;
-    public int id;
-    public int speedamount;
-    public int hpamount;
-    public int attackamount;
-    public GameObject model1;
-    public GameObject model2;
-    public GameObject model3;
+    [SerializeField] public Player player;
+    [SerializeField] public int id;
+    [SerializeField] public GameObject wall1;
+    [SerializeField] public GameObject wall2;
+    private healthBar maxHP;
+    private float speedamount = 4.5f;
+    private int hpamount = 100;
+    private int attackamount = 20;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        if (id == 0)
-        {
-            model1.SetActive(true);
-        }
-        else if (id == 1)
-        {
-            model2.SetActive(true);
-        }
-        else if (id == 2)
-        {
-            model3.SetActive(true);
-        }
+        maxHP =  FindObjectOfType<healthBar>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            player.ResetHp();
             if (id == 0)
             {
-                player.speed += speedamount;
+                ThirdPersonController thirdPersonController = player.GetComponent<ThirdPersonController>();
+                thirdPersonController.SetSpeed(speedamount, speedamount * 2);
             }
             else if (id == 1)
             {
                 player.hp += hpamount;
+                wall2.SetActive(false);
+                maxHP.healthSlider.maxValue = 200;
             }
             else if (id == 2)
             {
-                player.attack += attackamount;
+                Weapon weapon = player.GetComponentInChildren<Weapon>(true);
+                weapon.MinDamage += attackamount;
+                weapon.MaxDamage += attackamount;
+                wall1.SetActive(false);
             }
+            gameObject.SetActive(false);
+            player.powerUpsCollected++;
         }
     }
 }

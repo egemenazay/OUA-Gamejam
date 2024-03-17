@@ -12,6 +12,7 @@ public class PlayerCombat : MonoBehaviour {
 
     public bool WeaponDrawed;
     public bool Attacking;
+    public bool HitDamage;
 
     public GameObject WeaponHolder;
     public GameObject SheatHolder;
@@ -83,6 +84,7 @@ public class PlayerCombat : MonoBehaviour {
         _timePassed = 0f;
         _animator.SetTrigger(PlayerAnimatorParameters.ATTACK);
         _thirdPersonController.canMove = false;
+        HitDamage = true;
     }
 
     #region Animation Events

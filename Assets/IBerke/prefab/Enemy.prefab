@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8438819450386848732}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
   attackPoints: 1
   attackSpeed: 2
   player: {fileID: 0}
-  attackRange: 30
+  attackRange: 10
   inAttackRange: 0
   hitRange: 3
   inHitRange: 0
@@ -86,6 +86,7 @@ MonoBehaviour:
   enemyAnimator: {fileID: 1609732055977716663}
   targetVector: {x: 0, y: 0, z: 0}
   targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  FloatingTextPrefab: {fileID: 4703460610645885384, guid: a903790c41f4b294baec3489feb547cf, type: 3}
 --- !u!143 &8438819450386848732
 CharacterController:
   m_ObjectHideFlags: 0

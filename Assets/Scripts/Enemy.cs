@@ -25,9 +25,13 @@ public class Enemy : MonoBehaviour, IDamageable
     public static int hasTarget = Animator.StringToHash("hasTarget");
     public static int inRange = Animator.StringToHash("inRange");
     public static int die = Animator.StringToHash("die");
+    public GameObject FloatingTextPrefab;
+    BoxCollider _boxCollider;
+
     // Start is called before the first frame update
     void Start()
     {
+        _boxCollider = GetComponent<BoxCollider>();
         isAlive = true;
         initialPosition = transform.position;
         characterController = GetComponent<CharacterController>();
@@ -111,16 +115,26 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damage)
     {
+        if (!isAlive)
+        {
+            return;
+        }
         healthPoints -= damage;
         if (healthPoints <= 0)
         {
             Die();
         }
+
+        GameObject floatingTextObj = Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity, transform);
+        FloatingText floatingText = floatingTextObj.GetComponent<FloatingText>();
+        floatingText.SetText(damage.ToString());
     }
     
     private void Die()
     {
         isAlive = false;
+        characterController.enabled = false;
+        _boxCollider.enabled = false;
         enemyAnimator.SetTrigger(die);
         Destroy(gameObject, 3);
     }

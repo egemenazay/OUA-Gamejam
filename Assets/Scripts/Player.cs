@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -12,9 +10,11 @@ public class Player : MonoBehaviour
 
     public bool isAlive;
 
+    public int powerUpsCollected = 0;
+
     void Start()
     {
-        
+        isAlive = true;
     }
 
     void Update()
@@ -28,5 +28,11 @@ public class Player : MonoBehaviour
     {
         hp -= damage;
         Debug.Log(hp);
+    }
+
+    public void ResetHp() {
+        if (hp < 100 && isAlive) {
+            hp = 100;
+        }
     }
 }

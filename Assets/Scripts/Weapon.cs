@@ -3,24 +3,26 @@ using static UnityEngine.ParticleSystem;
 
 public class Weapon : MonoBehaviour {
 
-    public MinMaxCurve DamageCurve;
+    public int MinDamage = 5;
+    public int MaxDamage = 10;
 
-    private int _damage => Mathf.CeilToInt(DamageCurve.Evaluate(Random.value));
-
-    private void Reset() {
-        DamageCurve.mode = ParticleSystemCurveMode.Curve;
-    }
+    private int Damage => Mathf.CeilToInt(Random.Range(MinDamage, MaxDamage));
 
     private void OnTriggerEnter(Collider other) {
         IDamageable damageable = null;
         if (gameObject.CompareTag("Player") && other.gameObject.CompareTag("Enemy")) {
-            damageable = (IDamageable)other.gameObject.GetComponent<Enemy>();
+            damageable = other.gameObject.GetComponent<Enemy>();
+            PlayerCombat playerCombat = gameObject.GetComponentInParent<PlayerCombat>();
+            if (!playerCombat.HitDamage) {
+                return;
+            }
+            playerCombat.HitDamage = false;
         }
         if (gameObject.CompareTag("Enemy") && other.gameObject.CompareTag("Player")) {
             damageable = (IDamageable)other.gameObject.GetComponent<Player>();
         }
         if (damageable != null) {
-            damageable.TakeDamage(_damage);
+            damageable.TakeDamage(Damage);
         }
     }
 
