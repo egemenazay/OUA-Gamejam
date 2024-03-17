@@ -1,15 +1,8 @@
 using UnityEngine;
-using static UnityEngine.ParticleSystem;
 
 public class Weapon : MonoBehaviour {
 
-    public MinMaxCurve DamageCurve;
-
-    private int _damage => Mathf.CeilToInt(DamageCurve.Evaluate(Random.value));
-
-    private void Reset() {
-        DamageCurve.mode = ParticleSystemCurveMode.Curve;
-    }
+    public int Damage = 5;
 
     private void OnTriggerEnter(Collider other) {
         IDamageable damageable = null;
@@ -20,7 +13,7 @@ public class Weapon : MonoBehaviour {
             damageable = (IDamageable)other.gameObject.GetComponent<Player>();
         }
         if (damageable != null) {
-            damageable.TakeDamage(_damage);
+            damageable.TakeDamage(Damage);
         }
     }
 

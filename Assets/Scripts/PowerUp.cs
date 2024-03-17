@@ -30,8 +30,7 @@ public class PowerUp : MonoBehaviour
             else if (id == 2)
             {
                 Weapon weapon = player.GetComponentInChildren<Weapon>(true);
-                weapon.DamageCurve.constantMin += attackamount;
-                weapon.DamageCurve.constantMax += attackamount;
+                weapon.Damage += attackamount;
             }
 
             player.ResetHp();
