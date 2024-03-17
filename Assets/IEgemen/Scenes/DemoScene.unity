@@ -1261,6 +1261,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 535661ee8a3dd6048bb8dc9109162882, type: 3}
+--- !u!1 &127955544 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7121656588804960547, guid: 535661ee8a3dd6048bb8dc9109162882, type: 3}
+  m_PrefabInstance: {fileID: 127955543}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &130504136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5994,15 +5999,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4282401127381629867, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.064989
+      value: -3.0649893
       objectReference: {fileID: 0}
     - target: {fileID: 4282401127381629867, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9210001
+      value: -0.921
       objectReference: {fileID: 0}
     - target: {fileID: 4282401127381629867, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.9197491
+      value: 0.91974914
       objectReference: {fileID: 0}
     - target: {fileID: 4282401127381629867, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6014,15 +6019,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5272089879175095730, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.064989
+      value: -3.0649893
       objectReference: {fileID: 0}
     - target: {fileID: 5272089879175095730, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9210001
+      value: -0.921
       objectReference: {fileID: 0}
     - target: {fileID: 5272089879175095730, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.9197491
+      value: 0.91974914
       objectReference: {fileID: 0}
     - target: {fileID: 6239246663249322999, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16996,6 +17001,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 535661ee8a3dd6048bb8dc9109162882, type: 3}
+--- !u!1 &1395288593 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7121656588804960547, guid: 535661ee8a3dd6048bb8dc9109162882, type: 3}
+  m_PrefabInstance: {fileID: 1395288592}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1409503694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22788,6 +22798,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door_Middle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5721723476799238222, guid: 4adae8232505e0e45b64cc3b61e9d9e1, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7936834669806457470, guid: 4adae8232505e0e45b64cc3b61e9d9e1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.026
@@ -22831,13 +22845,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5721723476799238222, guid: 4adae8232505e0e45b64cc3b61e9d9e1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1825934410}
   m_SourcePrefab: {fileID: 100100000, guid: 4adae8232505e0e45b64cc3b61e9d9e1, type: 3}
 --- !u!4 &1825934408 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7936834669806457470, guid: 4adae8232505e0e45b64cc3b61e9d9e1, type: 3}
   m_PrefabInstance: {fileID: 1825934407}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1825934409 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5721723476799238222, guid: 4adae8232505e0e45b64cc3b61e9d9e1, type: 3}
+  m_PrefabInstance: {fileID: 1825934407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1825934410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825934409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97701e67df3972444a0ba49398edce3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemiesInTheRoom:
+  - {fileID: 1395288593}
+  FloatingTextPrefab: {fileID: 4703460610645885384, guid: a903790c41f4b294baec3489feb547cf, type: 3}
+  MissingConditionPrompt: You must kill all enemies in the room! Before open the
+    door.
 --- !u!1 &1830574650
 GameObject:
   m_ObjectHideFlags: 0
@@ -23861,6 +23900,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 535661ee8a3dd6048bb8dc9109162882, type: 3}
+--- !u!1 &1927970663 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7121656588804960547, guid: 535661ee8a3dd6048bb8dc9109162882, type: 3}
+  m_PrefabInstance: {fileID: 1927970662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1929373461
 GameObject:
   m_ObjectHideFlags: 0
@@ -25234,6 +25278,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door_Middle
       objectReference: {fileID: 0}
+    - target: {fileID: 5721723476799238222, guid: 4adae8232505e0e45b64cc3b61e9d9e1, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7936834669806457470, guid: 4adae8232505e0e45b64cc3b61e9d9e1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -132.08
@@ -25277,13 +25325,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5721723476799238222, guid: 4adae8232505e0e45b64cc3b61e9d9e1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2083667367}
   m_SourcePrefab: {fileID: 100100000, guid: 4adae8232505e0e45b64cc3b61e9d9e1, type: 3}
 --- !u!4 &2083667365 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7936834669806457470, guid: 4adae8232505e0e45b64cc3b61e9d9e1, type: 3}
   m_PrefabInstance: {fileID: 2083667364}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2083667366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5721723476799238222, guid: 4adae8232505e0e45b64cc3b61e9d9e1, type: 3}
+  m_PrefabInstance: {fileID: 2083667364}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2083667367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083667366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97701e67df3972444a0ba49398edce3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemiesInTheRoom:
+  - {fileID: 1927970663}
+  FloatingTextPrefab: {fileID: 4703460610645885384, guid: a903790c41f4b294baec3489feb547cf, type: 3}
+  MissingConditionPrompt: You must kill all enemies in the room! Before open the
+    door.
 --- !u!4 &2086691569 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5229622506550474334, guid: 535661ee8a3dd6048bb8dc9109162882, type: 3}
@@ -25606,6 +25679,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door_Middle (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5721723476799238222, guid: 4adae8232505e0e45b64cc3b61e9d9e1, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7936834669806457470, guid: 4adae8232505e0e45b64cc3b61e9d9e1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -47.215027
@@ -25649,13 +25726,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5721723476799238222, guid: 4adae8232505e0e45b64cc3b61e9d9e1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2119676837}
   m_SourcePrefab: {fileID: 100100000, guid: 4adae8232505e0e45b64cc3b61e9d9e1, type: 3}
 --- !u!4 &2119676835 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7936834669806457470, guid: 4adae8232505e0e45b64cc3b61e9d9e1, type: 3}
   m_PrefabInstance: {fileID: 2119676834}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2119676836 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5721723476799238222, guid: 4adae8232505e0e45b64cc3b61e9d9e1, type: 3}
+  m_PrefabInstance: {fileID: 2119676834}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2119676837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119676836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97701e67df3972444a0ba49398edce3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemiesInTheRoom:
+  - {fileID: 127955544}
+  FloatingTextPrefab: {fileID: 4703460610645885384, guid: a903790c41f4b294baec3489feb547cf, type: 3}
+  MissingConditionPrompt: You must kill all enemies in the room! Before open the
+    door.
 --- !u!1001 &2131298309
 PrefabInstance:
   m_ObjectHideFlags: 0
