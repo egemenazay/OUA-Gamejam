@@ -5997,6 +5997,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4282401127381629867, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.064989
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282401127381629867, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.9210001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282401127381629867, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.9197491
+      objectReference: {fileID: 0}
+    - target: {fileID: 5272089879175095730, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.064989
+      objectReference: {fileID: 0}
+    - target: {fileID: 5272089879175095730, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.9210001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5272089879175095730, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.9197491
+      objectReference: {fileID: 0}
     - target: {fileID: 6239246663249322999, guid: 72a37861a57ba4441802fd6df380e50b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 27.31107
@@ -22528,9 +22552,9 @@ MonoBehaviour:
   Destination: {fileID: 1740881160}
   _interactionPrompt: Enter Dungeon (E)
   FromDungeon: 0
-  _npcs1: {fileID: 0}
-  _priest: {fileID: 0}
-  FloatingTextPrefab: {fileID: 0}
+  _npcs1: {fileID: 1814526484}
+  _priest: {fileID: 1106095885}
+  FloatingTextPrefab: {fileID: 4703460610645885384, guid: a903790c41f4b294baec3489feb547cf, type: 3}
   MissingConditionPrompt: You must collect all powerups before turn back to the village!
 --- !u!4 &1795624267 stripped
 Transform:
@@ -24633,6 +24657,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b40cffea67202d4bbf662b25de4c94a, type: 3}
+--- !u!1 &1989738785
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1989738786}
+  m_Layer: 0
+  m_Name: BOS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1989738786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989738785}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 190.30399, y: -21.705826, z: 96.4203}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2008524186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25852,15 +25907,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3985452484900589676, guid: 3277f773a2c3a9c4ba9f27eeb02db160, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 70.48959
+      value: 64.52
       objectReference: {fileID: 0}
     - target: {fileID: 3985452484900589676, guid: 3277f773a2c3a9c4ba9f27eeb02db160, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24.044
+      value: 22.47
       objectReference: {fileID: 0}
     - target: {fileID: 3985452484900589676, guid: 3277f773a2c3a9c4ba9f27eeb02db160, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 29.3466
+      value: 55.95
       objectReference: {fileID: 0}
     - target: {fileID: 3985452484900589676, guid: 3277f773a2c3a9c4ba9f27eeb02db160, type: 3}
       propertyPath: m_LocalRotation.w
@@ -26216,3 +26271,4 @@ SceneRoots:
   - {fileID: 548187545}
   - {fileID: 2135539686}
   - {fileID: 90181784}
+  - {fileID: 1989738786}
