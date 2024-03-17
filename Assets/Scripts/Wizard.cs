@@ -45,6 +45,7 @@ public class Wizard : MonoBehaviour
         yield return new WaitForSeconds(3);
         // animasyon geçişi
         var projectile = Instantiate(projectileSkillPrefab, transform.position, Quaternion.identity);
+        projectile.GetComponent<Projectile>().direction = transform.forward;
     }
 
     private IEnumerator SpellTwoRoutine()

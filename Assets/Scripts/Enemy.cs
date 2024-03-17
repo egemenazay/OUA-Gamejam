@@ -19,10 +19,12 @@ public class Enemy : MonoBehaviour, IDamageable
     public float distanceToPlayer;
     public CharacterController characterController;
     public Vector3 initialPosition;
-
+    public Animator enemyAnimator;
     public Vector3 targetVector;
     public Quaternion targetRotation;
-
+    public static int hasTarget = Animator.StringToHash("hasTarget");
+    public static int inRange = Animator.StringToHash("inRange");
+    public static int die = Animator.StringToHash("die");
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,7 @@ public class Enemy : MonoBehaviour, IDamageable
             if (distanceToPlayer <= attackRange)
             {
                 inAttackRange = true;
+                enemyAnimator.SetBool(hasTarget, true);
             }
         }
     }
@@ -62,6 +65,7 @@ public class Enemy : MonoBehaviour, IDamageable
                 if (Vector3.Distance(transform.position, initialPosition) < 1)
                 {
                     inAttackRange = false;
+                    enemyAnimator.SetBool(hasTarget, false);
                 }
             }
             else
@@ -71,6 +75,8 @@ public class Enemy : MonoBehaviour, IDamageable
                 {
                     inAttackRange = false;
                     inHitRange = true;
+                    enemyAnimator.SetBool(inRange, true);
+                    enemyAnimator.SetBool(hasTarget, false);
                 }
             }
             var targetRotation = Quaternion.LookRotation(targetVector, Vector3.up);
@@ -89,6 +95,8 @@ public class Enemy : MonoBehaviour, IDamageable
                 {
                     inHitRange = false;
                     inAttackRange = true;
+                    enemyAnimator.SetBool(inRange, false);
+                    enemyAnimator.SetBool(hasTarget, true);
                     yield return null;
                 }
                 player.TakeDamage(attackPoints);
@@ -113,6 +121,7 @@ public class Enemy : MonoBehaviour, IDamageable
     private void Die()
     {
         isAlive = false;
+        enemyAnimator.SetTrigger(die);
         Destroy(gameObject, 3);
     }
 
