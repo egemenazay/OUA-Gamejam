@@ -9,12 +9,13 @@ public class healthBar : MonoBehaviour
 {
     public Slider healthSlider;
     private Player health;
-    public int maxHealth = 100;
+    public int maxHealth;
     
 
     private void Start()
     {
         health = FindObjectOfType<Player>();
+        maxHealth = 100;
         Debug.Log(health.hp);
         healthSlider.maxValue = maxHealth;
     }
