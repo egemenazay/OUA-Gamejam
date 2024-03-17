@@ -3,30 +3,15 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
-    public Player player;
-    public int id;
-    public int speedamount;
-    public int hpamount;
-    public int attackamount;
-    public GameObject model1;
-    public GameObject model2;
-    public GameObject model3;
+    [SerializeField] public Player player;
+    [SerializeField] public int id;
+    private int speedamount = 5;
+    private int hpamount = 100;
+    private int attackamount = 20;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        if (id == 0)
-        {
-            model1.SetActive(true);
-        }
-        else if (id == 1)
-        {
-            model2.SetActive(true);
-        }
-        else if (id == 2)
-        {
-            model3.SetActive(true);
-        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,14 +21,17 @@ public class PowerUp : MonoBehaviour
             if (id == 0)
             {
                 player.speed += speedamount;
+                gameObject.SetActive(false);
             }
             else if (id == 1)
             {
                 player.hp += hpamount;
+                gameObject.SetActive(false);
             }
             else if (id == 2)
             {
                 player.attack += attackamount;
+                gameObject.SetActive(false);
             }
         }
     }
