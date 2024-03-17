@@ -74,7 +74,7 @@ MonoBehaviour:
   attackPoints: 1
   attackSpeed: 2
   player: {fileID: 0}
-  attackRange: 30
+  attackRange: 10
   inAttackRange: 0
   hitRange: 3
   inHitRange: 0
