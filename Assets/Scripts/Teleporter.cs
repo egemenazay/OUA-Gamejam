@@ -7,12 +7,27 @@ public class Teleporter : MonoBehaviour, IInteractable {
     [SerializeField] string _interactionPrompt;
     public string InteractionPrompt => _interactionPrompt;
 
+    public bool FromDungeon;
+    public GameObject _npcs1;
+    public GameObject _priest;
+
     void Start() {
         _player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public bool Interact(Interactor interactor) {
-        Teleport();
+        if (FromDungeon) {
+            // TODO: check all tasks finished
+            if (false) {
+                // show floating text
+                return false;
+            }
+            Teleport();
+            _npcs1.SetActive(false);
+            _priest.SetActive(true);
+        } else {
+            Teleport();
+        }
         return true;
     }
 
