@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class Wizard : MonoBehaviour, IDamageable
@@ -30,6 +31,7 @@ public class Wizard : MonoBehaviour, IDamageable
     public static int die = Animator.StringToHash("die");
     public static int inSpellRange = Animator.StringToHash("inSpellRange");
     public GameObject FloatingTextPrefab;
+    public static Action Died;
 
 
     void Start()
@@ -116,6 +118,7 @@ public class Wizard : MonoBehaviour, IDamageable
         }
         healthPoints -= damage;
         if (healthPoints <= 0) {
+            Died.Invoke();
             Die();
         }
 
