@@ -1,4 +1,4 @@
-﻿using System;
+﻿using StarterAssets;
 using UnityEngine;
 
 public class PowerUp : MonoBehaviour
@@ -20,19 +20,22 @@ public class PowerUp : MonoBehaviour
         {
             if (id == 0)
             {
-                player.speed += speedamount;
-                gameObject.SetActive(false);
+                ThirdPersonController thirdPersonController = player.GetComponent<ThirdPersonController>();
+                thirdPersonController.IncreaseSpeed(speedamount, speedamount * 1.5f);
             }
             else if (id == 1)
             {
                 player.hp += hpamount;
-                gameObject.SetActive(false);
             }
             else if (id == 2)
             {
-                player.attack += attackamount;
-                gameObject.SetActive(false);
+                Weapon weapon = player.GetComponentInChildren<Weapon>(true);
+                weapon.DamageCurve.constantMin += attackamount;
+                weapon.DamageCurve.constantMax += attackamount;
             }
+
+            player.ResetHp();
+            gameObject.SetActive(false);
         }
     }
 }
