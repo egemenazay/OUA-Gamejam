@@ -53,6 +53,12 @@ public class PowerUp : MonoBehaviour
             }
             player.powerUpsCollected++;
 
+            UIManager.Instance.TextMeshProUGUI.text = UIManager.Instance.Text_FindGems + " " + player.powerUpsCollected + "/3";
+
+            if (player.powerUpsCollected >= 3) {
+                UIManager.Instance.TextMeshProUGUI.text = UIManager.Instance.Text_BackToVillage.text;
+            }
+
             ShowFloatingText1();
             DeActivate();
         }

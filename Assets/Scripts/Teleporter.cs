@@ -20,9 +20,8 @@ public class Teleporter : MonoBehaviour, IInteractable {
 
     public bool Interact(Interactor interactor) {
         if (!_canInteractable) { return false; }
-
+        int powerUpsCollected = _player.GetComponent<Player>().powerUpsCollected;
         if (FromDungeon) {
-            int powerUpsCollected = _player.GetComponent<Player>().powerUpsCollected;
             // TODO: check all tasks finished
             if (powerUpsCollected < 3) {
                 _canInteractable = false;
@@ -35,10 +34,15 @@ public class Teleporter : MonoBehaviour, IInteractable {
                 Invoke(nameof(SetCanInteractable), floatingText.DestroyTime);
                 return false;
             }
+            UIManager.Instance.TextMeshProUGUI.text = UIManager.Instance.Text_DefeatWizard.text;
             Teleport();
             _npcs1.SetActive(false);
             _priest.SetActive(true);
         } else {
+            if (powerUpsCollected >= 3) {
+                return false;
+            }
+            UIManager.Instance.TextMeshProUGUI.text = UIManager.Instance.Text_FindGems.text + " " + powerUpsCollected + "/3";
             Teleport();
         }
         return true;

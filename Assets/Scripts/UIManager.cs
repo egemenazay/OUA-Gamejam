@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public static UIManager Instance;
+
+    public TextMeshProUGUI TextMeshProUGUI;
+    public TextMeshProUGUI Text_EnterDungeon;
+    public TextMeshProUGUI Text_FindGems;
+    public TextMeshProUGUI Text_BackToVillage;
+    public TextMeshProUGUI Text_DefeatWizard;
+
+    void Awake() {
+        Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void Start() {
+        TextMeshProUGUI.text = Text_EnterDungeon.text;
     }
 }
